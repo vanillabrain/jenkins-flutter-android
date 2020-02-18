@@ -1,5 +1,5 @@
-FROM windsekirun/jenkins-android-docker
-MAINTAINER Dosun Yun <dosunyun@vanillabrain.com>
+FROM windsekirun/jenkins-android-docker:1.1.0
+LABEL maintainer="dosunyun@vanillabrain.com"
 
 # Flutter 설치 - 참고 : https://github.com/GoogleCloudPlatform/cloud-builders-community/blob/770e0e9623b8556643badd69a170809e93731cf1/flutter/Dockerfile
 ENV FLUTTER_HOME /opt/flutter
