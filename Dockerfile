@@ -1,5 +1,9 @@
-FROM windsekirun/jenkins-android-docker:1.1.0
+FROM windsekirun/jenkins-android-docker:1.1.4
 LABEL maintainer="dosunyun@vanillabrain.com"
+
+RUN sdkmanager --sdk_root=/opt/android-sdk-linux --update
+RUN sdkmanager --sdk_root=/opt/android-sdk-linux --install "cmdline-tools;latest"
+RUN sdkmanager --sdk_root=/opt/android-sdk-linux --install "build-tools;31.0.0" "platforms;android-31"
 
 # Flutter 설치 - 참고 : https://github.com/GoogleCloudPlatform/cloud-builders-community/blob/770e0e9623b8556643badd69a170809e93731cf1/flutter/Dockerfile
 ENV FLUTTER_HOME /opt/flutter
@@ -13,7 +17,7 @@ RUN flutter config  --no-analytics
 RUN flutter precache
 # 라이센스 허가
 RUN yes "y" | flutter doctor --android-licenses
-# flutter doctor 실행
+## flutter doctor 실행
 RUN flutter doctor -v
-# flutter upgrade 실행
+## flutter upgrade 실행
 RUN flutter upgrade
