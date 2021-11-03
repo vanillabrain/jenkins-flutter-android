@@ -4,6 +4,7 @@ Docker Image for Jenkins Flutter Android Build, [View on DockerHub](https://hub.
 ## Pre-installed packages
  * Jenkins Version: 2.266
  * Docker-CE
+ * Docker-Compose
 
 ### Flutter SDK
  * Recent Stable Version - from git
